@@ -28,13 +28,13 @@ app.controller('homeCtrl',['$scope', function($scope){
 	$scope.gems = []
 	$scope.init = function(){
 		let existingGems = localStorage.getItem('data')
-			if(existingGems === null){
-				existingGems = []
-			}
-			else {
-				existingGems = JSON.parse(existingGems)
-			}
-			$scope.gems = existingGems;
+		if(existingGems === null){
+			existingGems = []
+		}
+		else {
+			existingGems = JSON.parse(existingGems)
+		}
+		$scope.gems = existingGems;
 	}
 	$scope.init()
 }])
@@ -56,13 +56,13 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 
 	$scope.init2 = function(){
 		let existingGems = localStorage.getItem('data')
-			if(existingGems === null){
-				existingGems = []
-			}
-			else {
-				existingGems = JSON.parse(existingGems)
-			}
-			$scope.makans = existingGems;
+		if(existingGems === null){
+			existingGems = []
+		}
+		else {
+			existingGems = JSON.parse(existingGems)
+		}
+		$scope.makans = existingGems;
 	}
 
 	$scope.init2()
@@ -116,6 +116,7 @@ app.controller('riwayatCtrl',['$scope', function($scope){
 	$scope.his = []
 	$scope.histOrder = function(){
 		let existingGems = localStorage.getItem('history')
+<<<<<<< HEAD
 			if(existingGems === null){
 				existingGems = []
 			}
@@ -123,6 +124,15 @@ app.controller('riwayatCtrl',['$scope', function($scope){
 				existingGems = JSON.parse(existingGems)
 			}
 			$scope.his = existingGems;
+=======
+		if(existingGems === null){
+			existingGems = []
+		}
+		else {
+			existingGems = JSON.parse(existingGems)
+		}
+		$scope.his = existingGems;
+>>>>>>> origin/master
 	}
 	$scope.histOrder()
 }])
@@ -134,7 +144,11 @@ app.controller('login',function($scope,$location,$rootScope){
 	
 	//----- Users json
 	var validUsers= [ 
+<<<<<<< HEAD
 		{'username':'a', 'password':'a'}
+=======
+	{'username':'a', 'password':'a'}
+>>>>>>> origin/master
 	];
 	
 	$scope.showError = false; // set Error flag
@@ -149,10 +163,17 @@ app.controller('login',function($scope,$location,$rootScope){
 				
 				$location.path('/home')
 				flag = true;
+<<<<<<< HEAD
 				 $rootScope.loggedIn= true;
 				break;
 			}
 						
+=======
+				$rootScope.loggedIn= true;
+				break;
+			}
+			
+>>>>>>> origin/master
 		}
 
 		//-------- set error or success flags
@@ -168,6 +189,7 @@ app.controller('login',function($scope,$location,$rootScope){
 
 	}
 	$scope.logout = function(){
+<<<<<<< HEAD
       $rootScope.loggedIn= false;
        alert('Success!')
         $location.path('/')
@@ -176,6 +198,13 @@ app.controller('login',function($scope,$location,$rootScope){
         
       
   }
+=======
+		$rootScope.loggedIn= false;
+		alert('Success!')
+		$location.path('/')
+		
+	}
+>>>>>>> origin/master
 
 
 });
