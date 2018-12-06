@@ -1,0 +1,96 @@
+		<hr>
+		<table class="table">
+			<thead>
+				<th>Nama Depan </th>
+				<th>Nama Belakang </th>
+				<th>No Telpon </th>
+				<th>Alamat Gedung </th>
+				<th>Produk</th>
+				<th>Banyak</th>
+				<th>Harga</th>
+				<th>Total</th>
+			</thead>
+			<tbody>
+				<tr>
+					<td><div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.firstname}}
+
+						</div>
+					</div></td>
+
+					<td>
+						<div ng-repeat="hi in his" class="box">
+							<div class="cetner-text">
+								{{hi.lastname}}
+
+							</div>
+						</div>
+					</td>
+
+					<td>
+
+						<div ng-repeat="hi in his" class="box">
+							<div class="cetner-text">
+								{{hi.phone}}
+
+							</div>
+						</div>
+					</td>
+
+					<td>
+						<div ng-repeat="hi in his" class="box">
+							<div class="cetner-text">
+								{{'Gedung '+hi.gedung+' lt '+hi.lantai+' no '+hi.ruang}}
+
+							</div>
+						</div>
+					</td>
+						<td>
+						<div ng-repeat="hi in his" class="box">
+							<div class="cetner-text">
+								{{hi.namaMakan}}
+
+							</div>
+						</div>
+					</td>
+					<td>
+						<div ng-repeat="hi in his" class="box">
+							<div class="cetner-text">
+								{{hi.banyak}}
+
+							</div>
+						</div>
+					</td>
+					<td>
+						<div ng-repeat="hi in his" class="box">
+							<div class="cetner-text">
+								{{hi.harga}}
+
+							</div>
+						</div>
+					</td>
+						<td>
+						<div ng-repeat="hi in his" class="box">
+							<div class="cetner-text">
+								{{hi.subMakan}}
+
+							</div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+			
+		</table>
+
+				
+
+				
+					
+					
+
+					
+
+					
+
+			
