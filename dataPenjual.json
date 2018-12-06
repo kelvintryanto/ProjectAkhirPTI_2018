@@ -1,0 +1,63 @@
+[
+	{
+		"nama":"Starling",
+		"id": "Minuman",
+		"price":5000,
+		"image":"assets/starling.jpg",
+		"seller":{
+			"name":"Udin",
+			"location":"Samen"
+		}
+	},
+	{
+		"nama":"Mie Ayam",
+		"id": "Makanan",
+		"price":11000,
+		"image":"assets/mieayam.jpg",
+		"seller":{
+			"name":"Dadang",
+			"location":"Samen"
+		}
+	},
+	{
+		"nama":"Soto",
+		"id": "Makanan ",
+		"price":1500,
+		"image":"assets/soto.jpg",
+		"seller":{
+			"name":"Amang Persib",
+			"location":"Samen"
+		}
+
+	},
+	{
+		"nama":"Ketoprak",
+		"id": "Makanan",
+		"price":12000,
+		"image":"assets/ketoprak.jpg",
+		"seller":{
+			"name":"Dayat",
+			"location":"Samen"
+		}
+	},
+	{
+		"nama":"Bakso",
+		"id": "Makanan",
+		"price":10000,
+		"image":"assets/bakso.jpg",
+		"seller":{
+			"name":"Suep",
+			"location":"Samen"
+		}
+	},
+	{
+		"nama":"Cimol",
+		"id": "Makanan",
+		"price":5000,
+		"image":"assets/cimol.jpg",
+		"seller":{
+			"name":"Tatang",
+			"location":"Samen"
+		}
+	}
+]

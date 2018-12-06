@@ -1,0 +1,250 @@
+<form id="myform"  >
+  <header >Pemesanan Jajanan</header>
+
+  
+     
+        <input type="text" name="firstname"
+            placeholder="firstname.."
+              class="w3-input"
+              ng-model="newGem.firstname"
+              required >
+       
+    
+    
+        <input   type="text" name="lastname"
+              placeholder="lastname.."
+              class="w3-input"
+              ng-model="newGem.lastname"
+              required 
+          >
+       
+     
+    
+    
+      <input  type="text" name="phone" id="phone"
+            placeholder="telpon .."
+              class="w3-input"
+              ng-model="newGem.phone"
+              required 
+        >
+     
+     
+
+      <label  for="address">Alamat Tujuan</label>
+      <br>
+      <br>
+
+      <label  for="gedung">Gedung</label>
+    
+   
+  <select name="type" ng-model="newGem.gedung" required>
+        <option value="" disabled selected>Pilih ..</option>
+        
+        <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    
+      
+      </select>
+
+
+       <input  type="number" min="1" max="21" name="lantai" id="lantai" placeholder="Lantai  .."
+              class="w3-input"
+              ng-model="newGem.lantai"
+              required >    
+
+       <input  type="number" min="1" max="15" name="noRuang" id="noRuang" placeholder="No RUangan  .." class="w3-input"
+              ng-model="newGem.ruang"
+              require>
+        
+         <label  for="gedung">Makanan</label>
+
+
+          <select name="type" ng-model="newGem.harga" required>
+               <option  value="" disabled selected>Pilih ..</option>
+                    <option ng-repeat="makan in makans track by $index"  value="{{makan.price}}">
+                       
+                      {{makan.nama}}
+                     
+                   <select   id="namaMakan" name="namaMakan"  ng-model="newGem.namaMakan" >
+                      <input type="hidden" name="namaMakan" value="{{makan.nama}}">
+                   </select>
+                
+                    </option>
+               
+                     
+                   
+                 
+                  
+            </select>
+              <p>Harga: {{newGem.harga}}</p>
+            <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
+              class="w3-input"
+              ng-model="newGem.banyak"
+              value="2" 
+              required>
+              <p> Sub total Harga Makan: {{newGem.banyak*newGem.harga}} </p>
+              <input type="hidden" name="subMakan"  id="subMakan" ng-model="newGem.subMakan" value=" {{newGem.banyak*newGem.harga}}">
+            
+        
+      
+     
+      
+
+      
+             
+          
+
+      <button  class="btn"
+          ng-click="addGem()">Pesan</button>
+  <a href="/"><input type="" value="cancel" class="btn"> </a>  
+
+</form>
+
+
+
+
+
+
+
+
+
+ <!--    <div class="row">
+      <div class="col2">
+       <label class="animated fadeInDown" for="lantai">Lantai</label>
+       
+     </div>
+     <div class="col2">
+      <label class="animated fadeInDown" for="noRuang">Nomor Ruangan</label>
+     
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="row">
+   <label class="animated fadeInDown" for="makanan">Makanan</label>
+   <div class="select animated zoomIn" id="makanan" onchange="tampilkan()">
+
+
+    <input type="radio" name="makanan" >
+    <span class="placeholder">Pilih....</span>
+    <label class="option">
+      <input type="radio" name="makanan" value="soto">
+      <span class="title animated fadeIn"><i class=""></i>Soto</span>
+    </label>
+    <label class="option">
+      <input type="radio" name="makanan" value="mieayam">
+      <span class="title animated fadeIn"><i class=""></i>Mie Ayam</span>
+    </label>
+    <label class="option">
+      <input type="radio" name="makanan" value="bakso" >
+      <span class="title animated fadeIn"><i class=""></i>Bakso</span>
+    </label>
+    <label class="option">
+      <input type="radio" name="makanan" value="ketoprak">
+      <span ><i class=""></i>Ketoprak</span>
+    </label>
+  </div>
+</div>
+
+
+
+<div class="row">
+  <div class="col2">
+    <div id="qty" onchange="tampilkan()"  >
+      <label for="qty">Berapa Banyak</label>
+      <input  type="number" min="1" max="10" name="qty" id="qty" value="1" class="center">
+    </div>
+
+  </div>
+
+  <div class="col2">
+   <label for="Price">Harga</label>
+   <input  type="text" name="Price" id="Price">
+ </div>
+
+</div>
+
+<label  for="itemDescription">Keterangan</label>
+<input type="text" name="itemDescription" id="itemDescription"/>
+
+
+
+
+minuman ------------------------------- -->
+
+<!-- <div class="row">
+ <label  for="minuman">Minuman</label>
+ <div  id="minuman" onchange="tampilkan2()">
+
+
+  <input  type="radio" name="minuman" >
+  <span class="placeholder">Pilih....</span>
+  <label class="option">
+    <input type="radio" name="minuman" value="nutrisari">
+    <span ><i class=""></i>Nutri Sari</span>
+  </label>
+  <label class="option">
+    <input type="radio" name="minuman" value="chocolatos">
+    <span "><i class=""></i>Chocolatos</span>
+  </label>
+  <label class="option">
+    <input type="radio" name="minuman" value="kopi" >
+    <span ><i class=""></i>Kopi</span>
+  </label>
+  <label class="option">
+    <input type="radio" name="minuman" value="extrajos">
+    <span><i class=""></i>Extra Jos</span>
+  </label>
+  <label class="option">
+    <input type="radio" name="minuman" value="tehjus">
+    <span><i class=""></i>Teh Jus</span>
+  </label>
+</div>
+</div>
+
+<div class="row">
+  <div class="col2">
+    <div id="qtym" onchange="tampilkan2()"  >
+      <label  for="qtym">Berapa Banyak</label>
+      <input type="number" min="1" max="10" name="qtym" id="qtym" value="1" class="center">
+    </div>
+
+  </div>
+
+  <div class="col2">
+   <label  for="Price2">Harga</label>
+   <input type="text" name="Price2" id="Price2">
+ </div>
+
+</div>
+
+<label  for="itemDescription2">Keterangan</label>
+<input   type="text" name="itemDescription2" id="itemDescription2"/>
+
+<div class="area">
+  <div class="ckeckarea">
+    <input   type="checkbox" name="checkbox1" id="checkbox1" onclick="autofilling(this.form)">
+    <label class="animated fadeInDown" for="checkbox1">Ceklis kotak ini memastikan tujuan anda di tujukan kepada atas nama Penerima ini.</label>
+  </div>
+  <div class="row">
+    <div class="col2">
+      <input type="text" name="newfirstname">
+      <label for="newfistname">Nama Depan</label>
+    </div>
+    <div>
+      <input   type="text" name="newlastname">
+      <label  for="newlastname">Nama Belakang</label>
+    </div>
+  </div>
+  <div class="row">
+    <input  type="text" name="newaddress" id="newaddress">
+    <label  for="newaddress">Alamat Tujuan</label>
+  </div>
+</div>
+<div class="row"> -->

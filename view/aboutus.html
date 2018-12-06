@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Samen | About Us</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" rel="stylesheet" type="text/css">
+    <link href="logo.png" rel="icon" type="image/png" />
+
+     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link href="main.css" rel="stylesheet" type="text/css"/> 
+    <link rel="stylesheet" type="text/css" href="animasi.css">
+   <script>
+           $(document).ready(function() {
+          
+        // Transition effect for navbar 
+        $(window).scroll(function() {
+          // checks if window is scrolled more than 500px, adds/removes solid class
+          if($(this).scrollTop() > 500) { 
+              $('.navbar').addClass('solid');
+          } else {
+              $('.navbar').removeClass('solid');
+          }
+        });
+});
+
+   </script>
+</head>
+
+<body>
+<section id="Home">
+    
+      <div style="margin-top: 0px; padding-top: 0px;">
+        <div class="slider-wrap">
+  <div class="slider" id="slider">
+    <div class="holder">
+
+      <div class="slide " id="slide-0"><span class="temp  animated fadeInDown"><div class="container">
+    <div class="bgImage">
+      <div class="bgText">
+        <h1> "LAUGHTER IS BRIGHTNESS </br></br> IN THE PLACE </br></br> WHERE THE FOOD IS."</h1>
+      </div>
+    </div>
+  </div></span></div>
+      <div class="slide " id="slide-1"><span class="temp animated fadeInDown">  <div class="container">
+    <div class="bgImage">
+      <div class="bgText">
+        <h1> "LAUGHTER IS BRIGHTNESS </br></br> IN THE PLACE </br></br> WHERE THE FOOD IS."</h1>
+      </div>
+    </div>
+  </div></span></div>
+    
+    </div>
+  </div>
+  <nav class="slider-nav">
+    <a href="#slide-0" class="active">Slide 0</a> 
+    <a href="#slide-1">Slide 1</a> 
+    
+  </nav> 
+</div>
+</div>
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">SAMEN</a><!--<img src="assets/logo.png" style="width: 200%; height: 200%;">-->
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+           <li><a href="index.html" class=" animated fadeInDown">Samen</a></li>
+        <li><a href="Pemesanan.html" class=" animated fadeInDown">Pemesanan</a></li>
+        <li><a href="aboutus.html" class=" animated fadeInDown">Tentang</a></li>
+     
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    
+
+</section>
+
+
+
+
+<section id="about2">
+  <div class="container2 bak white">
+    <h2>About Samen</h2>
+    <p>
+      </br> Samen merupakan tempat penjual makanan yang berada di lingkungan sekitar Universitas Multimedia Nusantara</br>
+    </p>
+  </div>
+</section>
+
+<section id="contact" class="white font-white">
+  <div class="container2">
+    <h2>Contact Us</h2>
+  </div>
+  <div class="row">
+    <div class="column">
+      <div id="map" style="width:100%;height:500px"></div>
+    </div>
+    <div class="column">
+      <form action="/ation_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="indonesia">Indonesia</option>
+          <option value="singapore">Singapore</option>
+          <option value="malaysia">Malaysia</option>
+        </select>
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+</section>
+
+
+
+<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script> 
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script> 
+<script>
+// back to top 
+$('.logo').on('click', function(e) {
+  e.preventDefault();
+  $('.nav-toggle').removeClass('open');
+  $('.menu-left').removeClass('collapse');
+  $('html, body').animate({
+    scrollTop: 0
+  }, 750, 'easeInOutQuad')
+});
+
+// smooth scroll between sections
+$('a[href^="#"]').on('click', function(event) {
+
+  var $target = $(this.getAttribute('href'));
+
+  if($target.length) {
+    event.preventDefault();
+    $('html, body').stop().animate({
+      scrollTop: $target.offset().top
+    }, 750, 'easeInOutQuad');
+  }
+});
+
+// TOGGLE HAMBURGER & COLLAPSE NAV
+$('.nav-toggle').on('click', function() {
+  $(this).toggleClass('open');
+  $('.menu-left').toggleClass('collapse');
+});
+// REMOVE X & COLLAPSE NAV ON ON CLICK
+$('.menu-left a').on('click', function() {
+  $('.nav-toggle').removeClass('open');
+  $('.menu-left').removeClass('collapse');
+});
+
+// SHOW/HIDE NAV
+
+// Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('show-nav').addClass('hide-nav');
+        $('.nav-toggle').removeClass('open');
+        $('.menu-left').removeClass('collapse');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('hide-nav').addClass('show-nav');
+        }
+    }
+
+    lastScrollTop = st;
+}
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+<script>
+// Initialize google maps
+function myMap() {
+    var mapOptions = {
+        center: new google.maps.LatLng(-6.257151, 106.617201),
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.HYBRID
+    }
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+} 
+</script>
+
+
+ <script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script> 
+
+<script> 
+    var slider = {
+  
+  // Not sure if keeping element collections like this
+  // together is useful or not.
+  el: {
+    slider: $("#slider"),
+    allSlides: $(".slide"),
+    sliderNav: $(".slider-nav"),
+    allNavButtons: $(".slider-nav > a")
+  },
+  
+  timing: 2000,
+  slideWidth: 1350, // could measure this
+ 
+  // In this simple example, might just move the
+  // binding here to the init function
+  init: function() {
+    this.bindUIEvents();
+  },
+  
+  bindUIEvents: function() {
+    // You can either manually scroll...
+    this.el.slider.on("scroll", function(event) {
+      slider.moveSlidePosition(event);
+    });
+    // ... or click a thing
+    this.el.sliderNav.on("click", "a", function(event) {
+      slider.handleNavClick(event, this);
+    });
+    // What would be cool is if it had touch
+    // events where you could swipe but it
+    // also kinda snapped into place.
+  },
+  
+  moveSlidePosition: function(event) {
+    // Magic Numbers =(
+    this.el.allSlides.css({
+      "background-position": $(event.target).scrollLeft()/6-300+ "px 0"
+    });  
+    
+  },
+  
+  handleNavClick: function(event, el) {
+    event.preventDefault();
+    var position = $(el).attr("href").split("-").pop();
+    
+    this.el.slider.animate({
+      scrollLeft: position * this.slideWidth
+    }, this.timing);
+    
+    this.changeActiveNav(el);
+  },
+  
+  changeActiveNav: function(el) {
+    this.el.allNavButtons.removeClass("active");
+    $(el).addClass("active");
+  }
+  
+};
+
+slider.init();</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Samen</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ANGULARJS -->
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js'></script>
+  <script src='https://code.angularjs.org/1.4.7/angular-route.min.js'></script>
+  <!-- JQUERY -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">   
+
+
+<script type="text/javascript">
+      $(document).ready(function(){
+        $.getJSON("dataPenjual.json", function(result){
+            localStorage.setItem('data', JSON.stringify(result));
+        });
+
+           
+
+         
+   
+});
+</script>
+</head>   
+       
+
+<body>
+  <div ng-app="samen">
+    <div class="w3-container w3-half w3-display-topmiddle w3-margin-top">
+      <div class="w3-container w3-blue">
+        <h2>
+          <div ng-controller="login" ng-show="loggedIn">
+         <a href="/home" >Home</a>
+         <a href="/pesan" >Pemesanan</a>
+         <a href="/riwayat" >Riwayat Pemesanan</a>
+         <a href="/about" >Tentang</a>
+        <button ng-click="logout()">
+     <a href="/">Log out</a>
+           </button>
+       </div>
+       </h2>
+     </div>
+     <div ng-view>
+     </div>
+   </div>
+ </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/script.js"></script>
+ <script src='js/app.js'></script>
+ <script src='js/route.js'></script>
+
+</body>
+</html>
