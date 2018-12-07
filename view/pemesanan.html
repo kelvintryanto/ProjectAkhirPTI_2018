@@ -63,13 +63,13 @@
 
           <select name="type" ng-model="newGem.harga" required>
                <option  value="" disabled selected>Pilih ..</option>
-                    <option ng-repeat="makan in makans track by $index"  value="{{makan.price}}">
+                    <option ng-repeat="makan in makans track by $index"  >
                        
-                      {{makan.nama}}
+                      {{makan.nama}}{{makan.harga}}
+                 
+                      <input type="text" name="namaHarga"  ng-model="newGem.harga" ngvalue="{{makan.price}}" >
                      
-                   <select   id="namaMakan" name="namaMakan"  ng-model="newGem.namaMakan" >
-                      <input type="hidden" name="namaMakan" value="{{makan.nama}}">
-                   </select>
+                       <input type="text " name="namaMakan"  ng-model="newGem.namaMakan" ng-value="{{makan.nama}}" >
                 
                     </option>
                
@@ -82,9 +82,14 @@
             <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
               class="w3-input"
               ng-model="newGem.banyak"
-              value="2" 
+              
               required>
-              <p> Sub total Harga Makan: {{newGem.banyak*newGem.harga}} </p>
+              <p ng-init="0">Total Harga Products: {{newGem.banyak*newGem.harga}} </p>
+
+
+
+
+
               <input type="hidden" name="subMakan"  id="subMakan" ng-model="newGem.subMakan" value=" {{newGem.banyak*newGem.harga}}">
             
         

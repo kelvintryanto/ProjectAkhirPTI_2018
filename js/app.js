@@ -90,13 +90,12 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 		$scope.newGem.gedung = ''
 		$scope.newGem.lantai = ''
 		$scope.newGem.ruang = ''
-		$scope.newGem.makanan = ''
+		$scope.newGem.namaMakanan = ''
 		$scope.newGem.banyak = ''
 		$scope.newGem.submakan = ''
 		
 
-		$scope.gemForm.$setPristine()
-		$scope.gemForm.$setUntouched()
+		
 	}
 	
 }])
