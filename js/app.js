@@ -76,9 +76,20 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 			existingGems = []
 		}
 		else{
+		
 			existingGems = JSON.parse(existingGems)
+
 		}
-		existingGems.push($scope.newGem)
+
+		// existingGems.push($scope.newGem)
+		$scope.newGem.total = $scope.newGem.produk.price * $scope.newGem.banyak;
+				existingGems.push({
+					product: $scope.newGem.total,
+					product: $scope.newGem
+				})
+			
+	
+	
 		localStorage.setItem('history',JSON.stringify(existingGems))
 		$scope.resetForm()
 	}

@@ -14,7 +14,7 @@
 				<tr>
 					<td><div ng-repeat="hi in his" class="box">
 						<div class="cetner-text">
-							{{hi.firstname}}
+							{{hi.product.firstname}}
 
 						</div>
 					</div></td>
@@ -22,7 +22,7 @@
 					<td>
 						<div ng-repeat="hi in his" class="box">
 							<div class="cetner-text">
-								{{hi.lastname}}
+								{{hi.product.lastname}}
 
 							</div>
 						</div>
@@ -32,7 +32,7 @@
 
 						<div ng-repeat="hi in his" class="box">
 							<div class="cetner-text">
-								{{hi.phone}}
+								{{hi.product.phone}}
 
 							</div>
 						</div>
@@ -41,7 +41,7 @@
 					<td>
 						<div ng-repeat="hi in his" class="box">
 							<div class="cetner-text">
-								{{'Gedung '+hi.gedung+' lt '+hi.lantai+' no '+hi.ruang}}
+								{{'Gedung '+hi.product.gedung+' lt '+hi.prodcut.lantai+' no '+hi.product.ruang}}
 
 							</div>
 						</div>
@@ -49,7 +49,7 @@
 						<td>
 						<div ng-repeat="hi in his" class="box">
 							<div class="cetner-text">
-								{{hi.produk.nama}}
+								{{hi.product.produk.nama}}
 
 							</div>
 						</div>
@@ -57,7 +57,7 @@
 					<td>
 						<div ng-repeat="hi in his" class="box">
 							<div class="cetner-text">
-								{{hi.banyak}}
+								{{hi.product.banyak}}
 
 							</div>
 						</div>
@@ -65,7 +65,7 @@
 					<td>
 						<div ng-repeat="hi in his" class="box">
 							<div class="cetner-text">
-								{{hi.produk.price}}
+								{{hi.product.produk.price}}
 
 							</div>
 						</div>
@@ -73,7 +73,7 @@
 						<td>
 						<div ng-repeat="hi in his" class="box">
 							<div class="cetner-text">
-								{{hi.total}}
+								{{hi.product.total}}
 
 							</div>
 						</div>

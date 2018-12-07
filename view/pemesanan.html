@@ -49,61 +49,27 @@
       </select>
 
       
-       <input  type="number" min="1" max="21" name="lantai" id="lantai" placeholder="Lantai  .."
-              class="w3-input"
-              ng-model="newGem.lantai"
-              required >    
+      <input  type="number" min="1" max="21" name="lantai" id="lantai" placeholder="Lantai  .."
+      class="w3-input"
+      ng-model="newGem.lantai"
+      required >    
 
-       <input  type="number" min="1" max="15" name="noRuang" id="noRuang" placeholder="No RUangan  .." class="w3-input"
-              ng-model="newGem.ruang"
-              require>
-        
-         <label  for="gedung">Makanan</label>
+      <input  type="number" min="1" max="15" name="noRuang" id="noRuang" placeholder="No RUangan  .." class="w3-input"
+      ng-model="newGem.ruang"
+      require>
+      <label  for="gedung">Makanan</label>
+      <select ng-model="newGem.produk" ng-options="x.nama for x in makans"></select>
+      <p>Harga: {{newGem.produk.price}}</p>
+      <img src="{{newGem.produk.image}}" width="500" height="300">
+      <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
+      class="w3-input"
+      ng-model="newGem.banyak"
+
+      required>
+      <p >Total Harga Products: {{newGem.banyak*newGem.produk.price}} </p>
 
 
-          <!-- <select name="type" ng-model="newGem.harga" required>
-               <option  value="" disabled selected>Pilih ..</option>
-                    <option ng-repeat="makan in makans track by $index"  >
-                       
-                      {{makan.nama}}{{makan.harga}}
-                 
-                     
-                     
-                       <input type="text " name="namaMakan"  ng-model="newGem.namaMakan" ng-value="{{makan.nama}}" >
-                        <input type="text" name="namaHarga"  ng-model="newGem.harga" ngvalue="{{makan.price}}" >
-                
-                    </option>
-               
-                     
-                   
-                 
-                  
-            </select> -->
 
-            <select ng-model="newGem.produk" ng-options="x.nama for x in makans"></select>
-              <p>Harga: {{newGem.produk.price}}</p>
-              <img src="{{newGem.produk.image}}" width="500" height="300">
-            <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
-              class="w3-input"
-              ng-model="newGem.banyak"
-              
-              required>
-              <p >Total Harga Products: {{newGem.banyak*newGem.produk.price}} </p>
-
-              <!-- <input type="hidden" name="Price" ng-model="newGem.subMakan" ng-init="{{newGem.banyak*newGem.produk.price}}" ng-value="{{newGem.banyak*newGem.produk.price}}"/> -->
-
-             <!--    <div ng-controller="TheController" ng-init="Price=100;"> -->
-               <!-- <input type="number" name="total" id="total" "number" min="1"  
-              class="w3-input"
-              ng-model="newGem.total"
-           
-              ng-init="total1={{newGem.banyak*newGem.produk.price}}"
-              value="total1" 
-              required> -->
-                 <input type="hidden" ng-model="new.total" value="{{newGem.banyak*newGem.produk.price}}"/>
-
-             <!--  <input type="number" name="total"  id="total" ng-model="newGem.total" value="{{newGem.produk.price}}"> -->
-            
         
       
      
