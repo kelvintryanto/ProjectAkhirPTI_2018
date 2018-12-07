@@ -90,11 +90,19 @@
               required>
               <p >Total Harga Products: {{newGem.banyak*newGem.produk.price}} </p>
 
-              <input type="hidden" name="Price" ng-model="newGem.subMakan" ng-init="{{newGem.banyak*newGem.produk.price}}" ng-value="{{newGem.banyak*newGem.produk.price}}"/>
+              <!-- <input type="hidden" name="Price" ng-model="newGem.subMakan" ng-init="{{newGem.banyak*newGem.produk.price}}" ng-value="{{newGem.banyak*newGem.produk.price}}"/> -->
 
-              <!--   <div ng-controller="TheController" ng-init="Price=100;">
+             <!--    <div ng-controller="TheController" ng-init="Price=100;"> -->
+               <!-- <input type="number" name="total" id="total" "number" min="1"  
+              class="w3-input"
+              ng-model="newGem.total"
+           
+              ng-init="total1={{newGem.banyak*newGem.produk.price}}"
+              value="total1" 
+              required> -->
+                 <input type="hidden" ng-model="new.total" value="{{newGem.banyak*newGem.produk.price}}"/>
 
-              <input type="hidden" name="subMakan"  id="subMakan" ng-model="newGem.subMakan" ng-value=" {{newGem.banyak*newGem.produk.price}}"> -->
+             <!--  <input type="number" name="total"  id="total" ng-model="newGem.total" value="{{newGem.produk.price}}"> -->
             
         
       
