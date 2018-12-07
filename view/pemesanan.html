@@ -48,45 +48,28 @@
       
       </select>
 
+      
+      <input  type="number" min="1" max="21" name="lantai" id="lantai" placeholder="Lantai  .."
+      class="w3-input"
+      ng-model="newGem.lantai"
+      required >    
 
-       <input  type="number" min="1" max="21" name="lantai" id="lantai" placeholder="Lantai  .."
-              class="w3-input"
-              ng-model="newGem.lantai"
-              required >    
+      <input  type="number" min="1" max="15" name="noRuang" id="noRuang" placeholder="No RUangan  .." class="w3-input"
+      ng-model="newGem.ruang"
+      require>
+      <label  for="gedung">Makanan</label>
+      <select ng-model="newGem.produk" ng-options="x.nama for x in makans"></select>
+      <p>Harga: {{newGem.produk.price}}</p>
+      <img src="{{newGem.produk.image}}" width="500" height="300">
+      <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
+      class="w3-input"
+      ng-model="newGem.banyak"
 
-       <input  type="number" min="1" max="15" name="noRuang" id="noRuang" placeholder="No RUangan  .." class="w3-input"
-              ng-model="newGem.ruang"
-              require>
-        
-         <label  for="gedung">Makanan</label>
+      required>
+      <p >Total Harga Products: {{newGem.banyak*newGem.produk.price}} </p>
 
 
-          <select name="type" ng-model="newGem.harga" required>
-               <option  value="" disabled selected>Pilih ..</option>
-                    <option ng-repeat="makan in makans track by $index"  value="{{makan.price}}">
-                       
-                      {{makan.nama}}
-                     
-                   <select   id="namaMakan" name="namaMakan"  ng-model="newGem.namaMakan" >
-                      <input type="hidden" name="namaMakan" value="{{makan.nama}}">
-                   </select>
-                
-                    </option>
-               
-                     
-                   
-                 
-                  
-            </select>
-              <p>Harga: {{newGem.harga}}</p>
-            <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
-              class="w3-input"
-              ng-model="newGem.banyak"
-              value="2" 
-              required>
-              <p> Sub total Harga Makan: {{newGem.banyak*newGem.harga}} </p>
-              <input type="hidden" name="subMakan"  id="subMakan" ng-model="newGem.subMakan" value=" {{newGem.banyak*newGem.harga}}">
-            
+
         
       
      

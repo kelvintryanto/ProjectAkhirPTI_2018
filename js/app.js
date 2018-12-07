@@ -76,9 +76,20 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 			existingGems = []
 		}
 		else{
+		
 			existingGems = JSON.parse(existingGems)
+
 		}
-		existingGems.push($scope.newGem)
+
+		// existingGems.push($scope.newGem)
+		$scope.newGem.total = $scope.newGem.produk.price * $scope.newGem.banyak;
+				existingGems.push({
+					product: $scope.newGem.total,
+					product: $scope.newGem
+				})
+			
+	
+	
 		localStorage.setItem('history',JSON.stringify(existingGems))
 		$scope.resetForm()
 	}
@@ -90,13 +101,12 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 		$scope.newGem.gedung = ''
 		$scope.newGem.lantai = ''
 		$scope.newGem.ruang = ''
-		$scope.newGem.makanan = ''
+		$scope.newGem.namaMakanan = ''
 		$scope.newGem.banyak = ''
 		$scope.newGem.submakan = ''
 		
 
-		$scope.gemForm.$setPristine()
-		$scope.gemForm.$setUntouched()
+		
 	}
 	
 }])
