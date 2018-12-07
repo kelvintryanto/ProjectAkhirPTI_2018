@@ -167,6 +167,7 @@ app.controller('login',function($scope,$location,$rootScope){
 
 
 	}
+	
 	$scope.logout = function(){
 		$rootScope.loggedIn= false;
 		alert('Success!')
