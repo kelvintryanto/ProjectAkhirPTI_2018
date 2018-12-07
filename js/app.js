@@ -18,6 +18,10 @@ app.config(function($routeProvider,$locationProvider){
 		templateUrl : 'view/riwayat.html',
 		controller: 'riwayatCtrl'
 	})
+	.when('/about',{
+		templateUrl : 'view/tentang.html',
+		
+	})
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
@@ -53,7 +57,7 @@ app.directive("singleGem", function(){
 
 app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 	$scope.makans = []
-
+	
 	$scope.init2 = function(){
 		let existingGems = localStorage.getItem('data')
 		if(existingGems === null){
@@ -66,31 +70,74 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 	}
 
 	$scope.init2()
-	
-	
-	
-	$scope.newGem = {}
-	$scope.addGem = function(){
-		let existingGems = localStorage.getItem('history')
+		$scope.keranjangs = []
+		$scope.carts = []
+		$scope.test = []
+		$scope.total=0;
+		let i = 0;
+	$scope.cartOrder = function(index){
+		let existingGems = localStorage.getItem('data')
+		
+		
 		if(existingGems === null){
 			existingGems = []
 		}
-		else{
-		
+		else {
 			existingGems = JSON.parse(existingGems)
+		}
+		
+		$scope.carts.nama = existingGems[index].nama;
+		$scope.carts.price = existingGems[index].price;
+		$scope.total= ($scope.total + existingGems[index].price);
+		$scope.test.push({
+					nama: $scope.carts.nama,
+					price: $scope.carts.price,
+					total: $scope.total,
 
+					product: $scope.newGem
+				})
+	
+		localStorage.setItem('carts',JSON.stringify($scope.test))
+		localStorage.setItem('history',JSON.stringify($scope.test))
+		
+		$scope.keranjangs = $scope.test
+		
+		
+
+	}
+	$scope.newGem = {}
+	$scope.newGem2 ={}
+
+	$scope.addGem = function(){
+		let existingGems = localStorage.getItem('history2')
+		let existingGems2 = localStorage.getItem('carts')
+		if(existingGems === null || existingGems2 === null){
+			existingGems = []
+			existingGems2 = []
 		}
 
-		// existingGems.push($scope.newGem)
-		$scope.newGem.total = $scope.newGem.produk.price * $scope.newGem.banyak;
+		else{
+			$scope.newGem.produk.price;
+			existingGems = JSON.parse(existingGems)
+			existingGems2 = JSON.parse(existingGems2)
+		}
+		
+			
+		 $scope.newGem.total = ($scope.newGem.produk.price * $scope.newGem.banyak);
 				existingGems.push({
 					product: $scope.newGem.total,
 					product: $scope.newGem
 				})
 			
 	
+			// existingGems2.push({
+			// 		product: $scope.newGem2.total,
+			// 		product: $scope.newGem2.nama,
+			// 		product: $scope.newGem2.price
+			// 	})
 	
 		localStorage.setItem('history',JSON.stringify(existingGems))
+		localStorage.setItem('history2',JSON.stringify(existingGems))
 		$scope.resetForm()
 	}
 
@@ -112,15 +159,7 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 }])
 
 
-// app.directive("makanan", function(){
-// 	return {
-// 		templateUrl : 'view/makanan.html',
-// 		scope: {
-// 			makanData: '='
-// 		},
-// 		controller: 'pesanCtrl'
-// 	}
-// })
+
 
 app.controller('riwayatCtrl',['$scope', function($scope){
 	$scope.his = []
@@ -160,6 +199,10 @@ app.controller('login',function($scope,$location,$rootScope){
 				$location.path('/home')
 				flag = true;
 				$rootScope.loggedIn= true;
+				 $rootScope.checkboxModel = {
+       value1 : false,
+       
+     };
 				break;
 			}
 			
