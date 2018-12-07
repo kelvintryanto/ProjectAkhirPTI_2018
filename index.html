@@ -10,29 +10,30 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/cart.css">
-   <script src="js/jquery-3.3.1.min.js"></script>
-
-  <!-- ANGULARJS -->
-  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js'></script>
-  <script src='https://code.angularjs.org/1.4.7/angular-route.min.js'></script>
-  <!-- JQUERY -->
-  <script src='js/app.js'></script>
-  <script src="js/bootstrap.min.js"></script>
-
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $.getJSON("dataPenjual.json", function(result){
-        localStorage.setItem('data', JSON.stringify(result));
-      });
-    });
-  </script>
+  <link rel="stylesheet" type="text/css" href="css/cart.css">
 </head>   
-
 
 <body>
   <div ng-app="samen">
-    <div class="w3-container w3-half w3-display-topmiddle w3-margin-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-semitransparent" ng-controller="login" ng-show="loggedIn">
+      <div class="container">
+        <a class="navbar-brand" href="/home"><img src="assets/samen_logo.png" style="width: 3em"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="/home">Home</a>
+            <a class="nav-item nav-link" href="/pesan">Pemesanan</a>
+            <a class="nav-item nav-link" href="/about">Tentang</a>
+          </div>
+          <a href="/riwayat" class="riwayat"><i class="fa fa-shopping-cart my-2 my-sm-0"></i></a>
+          <button class="btn btn-outline-danger my-2 my-sm-0" ng-click="logout()">Log Out</button>      
+        </div>
+      </div>
+    </nav>
+
+    <!-- <div class="w3-container w3-half w3-display-topmiddle w3-margin-top">
       <div class="w3-container w3-blue">
         <h2>
           <div ng-controller="login" ng-show="loggedIn">
@@ -46,13 +47,30 @@
             </button>
           </div>
         </h2>
-      </div>
+      </div> -->
 
       <!-- Pergantian Page -->
-      <div ng-view>
+      <div ng-view style="margin-top: 15px;">
+
       </div>
     </div>
   </div>
 
+  <script src="js/jquery-3.3.1.min.js"></script>
+
+  <!-- ANGULARJS -->
+  <script src='js/angular.min.js'></script>
+  <script src='js/angular-route.min.js'></script>
+  <!-- JQUERY -->
+  <script src='js/app.js'></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $.getJSON("dataPenjual.json", function(result){
+        localStorage.setItem('data', JSON.stringify(result));
+      });
+    });
+  </script>
 </body>
 </html>

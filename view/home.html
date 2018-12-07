@@ -1,53 +1,26 @@
- <div>
-   <h2 >Apa itu SAMEN ?</h2>
+ <div class="container">
+   <h2>Apa itu SAMEN ?</h2>
    <p >SAMEN (Samping U EM EN) adalah sebuah tempat yang menyediakan banyak sekali makanan dan jajanan dengan harga terjangkau. Samen memiliki banyak kuliner yang di perdagangkan, seperti Soto, Mie Ayam, Telor gulung, dan Cilor. Banyak mahasiswa dan mahasiswi UMN yang berkunjung ke samen setiap harinya. Samen terlihat selalu ramai karena kuliner nya dinilai sangat terjangkau bagi kantong mahasiswa. Nah sekarang mari kita lihat kuliner apa saja sih yang ada di samen.</p>
+ </div>
+
+
+ <div class="container">
+  <div class="row">
+    <h1 class="center border-bottom">Pedagang</h1>
+    <div class="area">
+      <div class="w3-container w3-border w3-padding-32">
+        <single-gem ng-repeat="gem in gems track by $index" gem-data="gem"></single-gem>
+      </div>
+    </div> 
+  </div>
 </div>
 
-
-  
-        <div class="row">
-            <h1 class="center border-bottom">Pedagang</h1>
-            <div class="area">
-                  <div class="w3-container w3-border w3-padding-32">
-            <single-gem 
-              ng-repeat="gem in gems track by $index"
-              gem-data="gem"
-            >
-            </single-gem>
-    </div>
-
-    
-    </div> 
-            </div>
-      
-         
-        
-  
+<div class="container">
+  <div class="center padding-32 col-12">
     <a href="/pesan">
-         <button class="button">Pesan Sekarang</button>
-    </a> 
-   
-
-     
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <button type="button" class="btn btn-success btn-block" >
+        Pesan Sekarang
+      </button>
+    </a>
+  </div>
+</div>

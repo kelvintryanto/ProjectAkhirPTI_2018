@@ -1,52 +1,180 @@
-  <div class="jumbotron">
-<form id="myform"  >
-  <header >Pemesanan Jajanan</header>
+<div class="container">
+  <form id="myform">
+    <div class="card">
+      <div class="card-body">
+        <h2>Pemesanan Jajanan</h2>
 
-  
-     
         <input type="text" name="firstname"
-            placeholder="firstname.."
-              class="w3-input"
-              ng-model="newGem.firstname"
-              required >
-       
-    
-    
-        <input   type="text" name="lastname"
-              placeholder="lastname.."
-              class="w3-input"
-              ng-model="newGem.lastname"
-              required 
-          >
-       
-     
-    
-    
-      <input  type="text" name="phone" id="phone"
-            placeholder="telpon .."
-              class="w3-input"
-              ng-model="newGem.phone"
-              required 
+        placeholder="firstname.."
+        class="w3-input col-3"
+        ng-model="newGem.firstname"
+        required
         >
-     
-     
-        <br>
-      <label  for="address">Alamat Tujuan</label>
-      <br>
-      <br>
 
-      <label  for="gedung">Gedung</label>
-    
-   
-  <select name="type" ng-model="newGem.gedung" required>
+        <input type="text" name="lastname"
+        placeholder="lastname.."
+        class="w3-input col-3"
+        ng-model="newGem.lastname"
+        required 
+        >
+
+        <input  type="text" name="phone" id="phone"
+        placeholder="telepon .."
+        class="w3-input col-3"
+        ng-model="newGem.phone"
+        required 
+        >
+
+        <h2 style="margin-top: 20px;">Alamat Antar</h2>
+        <p>
+          Gedung
+          <select name="type" ng-model="newGem.gedung" required>
+            <option value="" disabled selected>Pilih...</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+
+          <input  type="number" min="1" max="21" name="lantai" id="lantai" placeholder="Lantai..."
+          class="w3-input"
+          ng-model="newGem.lantai"
+          required >    
+
+          <input  type="number" min="1" max="15" name="noRuang" id="noRuang" placeholder="No Ruangan..." class="w3-input"
+          ng-model="newGem.ruang"
+          require>
+        </p>
+
+        <label>Mode E-commmerce (klik untuk mengaktifkan) :
+          <input type="checkbox" ng-model="checkboxModel.value1">
+        </label><br/>
+        <h1>Makanan</h1>
+
+
+        <div ng-show="!checkboxModel.value1">
+          <p>Silahkan Pilih Produk: </p>
+          <select ng-model="newGem.produk" ng-options="x.nama for x in makans"></select>
+          <p>Harga: {{newGem.produk.price}}</p>
+          <img src="{{newGem.produk.image}}" width="500" height="300">
+          <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
+          class="w3-input"
+          ng-model="newGem.banyak"
+
+          required>
+          <p >Total Harga Products: {{newGem.banyak*newGem.produk.price}} </p>
+        </div>
+
+
+        <div ng-show="checkboxModel.value1">
+          <form>
+            <div class="container products-container">
+              <div class="col-sm-4" >
+                <div class="col-item">
+                  <div  ng-repeat="makan in makans track by $index">
+                    <div class="photo">
+                      <img id="image"  src="{{makan.image}}" class="img-responsive" width="800" height="300">
+                    </div>
+                    <div class="info">
+                      <div class="row">
+                        <div class="price col-md-6">
+                          <h5>{{makan.nama}}</h5>
+                          <h5  class="blue">Rp.{{makan.price}}</h5>
+                        </div>
+                        <div  class="rating hidden-sm col-md-6">
+                          <i class="blue fa fa-star"></i>
+                          <i class="blue fa fa-star"></i>
+                          <i class="blue fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                          <i class="fa fa-star"></i>
+                        </div>
+                        <p hidden></p>
+                      </div>
+                      <div class="separator clear-left">
+                        <p class="btn-add btnAdd">
+                          <i class="fa fa-shopping-cart"></i>
+                          <button ng-click="cartOrder($index)" class="hidden-sm">Tambahkan Ke Keranjang</button>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="jumbotron">
+              <div class="container">
+                <table class="table" id="tableOrder">
+                  <thead>
+                    <tr>
+                      <th>Product Name</th>
+                      <th>Price</th>
+                      <th>Total</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div ng-repeat="cart in keranjangs" class="box">
+                          <div class="cetner-text">
+                            {{cart.nama}}
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div ng-repeat="cart in keranjangs" class="box">
+                          <div class="cetner-text">Rp.
+                            {{cart.price}}
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <div ng-repeat="cart in keranjangs" class="box">
+                          <div class="cetner-text">Rp.
+                            {{cart.total}}
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>  
+                </table>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row padding-16">
+      <button class="btn btn-success col-6" ng-click="addGem()">
+        Pesan
+      </button>
+      <a href="/home" class="col-6">
+        <button type="" value="cancel" class="btn btn-danger col-12">
+          Cancel
+        </button>
+      </a>
+    </div>
+  </form>
+</div>
+
+
+      <!-- <br>
+      <label  for="address">Alamat Antar</label>
+      <br>
+      <br> -->
+
+      <!-- <label  for="gedung">Gedung</label>
+
+
+      <select name="type" ng-model="newGem.gedung" required>
         <option value="" disabled selected>Pilih ..</option>
         
         <option value="A">A</option>
-      <option value="B">B</option>
-      <option value="C">C</option>
-      <option value="D">D</option>
-    
-      
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+
+
       </select>
 
       
@@ -58,135 +186,121 @@
       <input  type="number" min="1" max="15" name="noRuang" id="noRuang" placeholder="No RUangan  .." class="w3-input"
       ng-model="newGem.ruang"
       require>
-      <br>
-          <label>Mode E-commmerce (klik untuk mengaktifkan) :
-    <input type="checkbox" ng-model="checkboxModel.value1">
-  </label><br/>
+      <br> -->
+      <!-- <label>Mode E-commmerce (klik untuk mengaktifkan) :
+        <input type="checkbox" ng-model="checkboxModel.value1">
+      </label><br/>
       <h1>Makanan</h1>
-  
+
 
       <div ng-show="!checkboxModel.value1">
         <p>Silahkan Produk Pilih: </p>
-      <select ng-model="newGem.produk" ng-options="x.nama for x in makans"></select>
-      <p>Harga: {{newGem.produk.price}}</p>
-      <img src="{{newGem.produk.image}}" width="500" height="300">
-      <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
-      class="w3-input"
-      ng-model="newGem.banyak"
+        <select ng-model="newGem.produk" ng-options="x.nama for x in makans"></select>
+        <p>Harga: {{newGem.produk.price}}</p>
+        <img src="{{newGem.produk.image}}" width="500" height="300">
+        <input type="number" name="qty" id="qty" "number" min="1"  placeholder="banyak  .."
+        class="w3-input"
+        ng-model="newGem.banyak"
 
-      required>
-      <p >Total Harga Products: {{newGem.banyak*newGem.produk.price}} </p>
-       </div>
-     
+        required>
+        <p >Total Harga Products: {{newGem.banyak*newGem.produk.price}} </p>
+      </div>
+
 
       <div ng-show="checkboxModel.value1">
-        
-    
-<form>
-  <div class="container products-container">
-  <div class="col-sm-4" >
-                  <div class="col-item">
-                  <div  ng-repeat="makan in makans track by $index">
-              <div class="photo">
-                  <img id="image"  src="{{makan.image}}" class="img-responsive" width="800" height="300">
-              </div>
-              <div class="info">
-                <div class="row">
-                  <div class="price col-md-6">
-                    <h5>{{makan.nama}}</h5>
-                    <h5  class="blue">Rp.{{makan.price}}</h5>
-                    </div>
-                  <div  class="rating hidden-sm col-md-6">
-                    <i class="blue fa fa-star"></i>
-                    <i class="blue fa fa-star"></i>
-                    <i class="blue fa fa-star"></i>
-                    <i class=" fa fa-star"></i>
-                    <i class=" fa fa-star"></i>
+
+
+        <form>
+          <div class="container products-container">
+            <div class="col-sm-4" >
+              <div class="col-item">
+                <div  ng-repeat="makan in makans track by $index">
+                  <div class="photo">
+                    <img id="image"  src="{{makan.image}}" class="img-responsive" width="800" height="300">
                   </div>
-                  <p hidden>
-                   
-                  </p>
+                  <div class="info">
+                    <div class="row">
+                      <div class="price col-md-6">
+                        <h5>{{makan.nama}}</h5>
+                        <h5  class="blue">Rp.{{makan.price}}</h5>
+                      </div>
+                      <div  class="rating hidden-sm col-md-6">
+                        <i class="blue fa fa-star"></i>
+                        <i class="blue fa fa-star"></i>
+                        <i class="blue fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                        <i class=" fa fa-star"></i>
+                      </div>
+                      <p hidden>
+
+                      </p>
+                    </div>
+                    <div class="separator clear-left">
+                      <p class="btn-add btnAdd">
+                        <i class="fa fa-shopping-cart"></i>
+                        <button ng-click="cartOrder($index)" class="hidden-sm">Tambahkan Ke Keranjang</button>
+                      </p>
+
+                    </div>
+
+                  </div>
                 </div>
-              <div class="separator clear-left">
-                <p class="btn-add btnAdd">
-                  <i class="fa fa-shopping-cart"></i>
-                  <button ng-click="cartOrder($index)" class="hidden-sm">Tambahkan Ke Keranjang</button>
-                </p>
-            
-               </div>
-             
+              </div>
             </div>
           </div>
-     </div>
-      </div>
-     </div>
 
-      <div class="jumbotron">
-    <div class="container">
-      <table class="table" id="tableOrder">
-        
-        <thead>
-          <tr>
-            
-            <th>Product Name</th>
-            <th>Price</th>
-            <th>Total</th>
-          </tr> 
-        </thead>
-        <tbody>
-          <tr>
-           <td>
-            <div ng-repeat="cart in keranjangs" class="box">
-              <div class="cetner-text">
-                {{cart.nama}}
+          <div class="jumbotron">
+            <div class="container">
+              <table class="table" id="tableOrder">
 
-              </div>
-            </div>
-          </td>
-          <td>
-            <div ng-repeat="cart in keranjangs" class="box">
-              <div class="cetner-text">Rp.
-                {{cart.price}}
+                <thead>
+                  <tr>
 
-              </div>
-            </div>
-          </td>
-           <td>
-            <div ng-repeat="cart in keranjangs" class="box">
-              <div class="cetner-text">Rp.
-                {{cart.total}}
+                    <th>Product Name</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                  </tr> 
+                </thead>
+                <tbody>
+                  <tr>
+                   <td>
+                    <div ng-repeat="cart in keranjangs" class="box">
+                      <div class="cetner-text">
+                        {{cart.nama}}
 
-              </div>
-            </div>
-          </td>
-          </tr>
-        </tbody>  
-        
-      </table>
-    </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div ng-repeat="cart in keranjangs" class="box">
+                      <div class="cetner-text">Rp.
+                        {{cart.price}}
+
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div ng-repeat="cart in keranjangs" class="box">
+                      <div class="cetner-text">Rp.
+                        {{cart.total}}
+
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>  
+
+            </table>
+          </div>
+
+        </div>
+
+      </form>
+    </div> -->
+
+
+
+
+
+
     
-  </div>
-
-</form>
-  </div>
-
-      
-
-      
-           
-
-      <button  class="btn"
-          ng-click="addGem()">Pesan</button>
-  <a href="/home"><input type="" value="cancel" class="btn"> </a>  
-
-</form>
-
-
-</div>
-
-
-
-
-
-
- 
