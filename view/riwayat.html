@@ -1,173 +1,175 @@
-		<hr>
-		<table class="table" ng-show="checkboxModel.value1">
-			<thead>
-				<th>Nama Depan </th>
-				<th>Nama Belakang </th>
-				<th>No Telpon </th>
-				<th>Alamat Gedung </th>
-				<th>Produk</th>
-				<th>Harga</th>
-				<th>Total</th>
-			</thead>
-			<tbody>
-				<tr>
-					
-					<td><div ng-repeat="hi in his" class="box">
+<div class="container">
+	<table class="table" ng-show="checkboxModel.value1">
+		<thead>
+			<th>Nama Depan </th>
+			<th>Nama Belakang </th>
+			<th>No Telpon </th>
+			<th>Alamat Gedung </th>
+			<th>Produk</th>
+			<th>Harga</th>
+			<th>Total</th>
+		</thead>
+		<tbody>
+			<tr>
+				
+				<td><div ng-repeat="hi in his" class="box">
+					<div class="cetner-text">
+						{{hi.product.firstname}}
+
+					</div>
+				</div></td>
+
+				<td>
+					<div ng-repeat="hi in his" class="box">
 						<div class="cetner-text">
-							{{hi.product.firstname}}
+							{{hi.product.lastname}}
 
 						</div>
-					</div></td>
+					</div>
+				</td>
 
-					<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.lastname}}
+				<td>
 
-							</div>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.product.phone}}
+
 						</div>
-					</td>
+					</div>
+				</td>
 
-					<td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{'Gedung '+hi.product.gedung+' lt '+hi.prodcut.lantai+' no '+hi.product.ruang}}
 
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.phone}}
-
-							</div>
 						</div>
-					</td>
+					</div>
+				</td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.nama}}
 
-					<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{'Gedung '+hi.product.gedung+' lt '+hi.prodcut.lantai+' no '+hi.product.ruang}}
-
-							</div>
 						</div>
-					</td>
-						<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.nama}}
+					</div>
+				</td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.price}}
 
-							</div>
 						</div>
-					</td>
-					<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.price}}
+					</div>
+				</td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.total}}
 
-							</div>
 						</div>
-					</td>
-						<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.total}}
+					</div>
+				</td>
 
-							</div>
+			</tr>
+		</tbody>
+		
+	</table>
+
+	
+
+	
+	
+	
+
+	
+
+	
+	<table class="table" ng-show="!checkboxModel.value1">
+		<thead>
+			<th>Nama Depan </th>
+			<th>Nama Belakang </th>
+			<th>No Telpon </th>
+			<th>Alamat Gedung </th>
+			<th>Produk</th>
+			<th>Banyak</th>
+			<th>Harga</th>
+			<th>Total</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td><div ng-repeat="hi in his" class="box">
+					<div class="cetner-text">
+						{{hi.product.firstname}}
+
+					</div>
+				</div></td>
+
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.product.lastname}}
+
 						</div>
-					</td>
+					</div>
+				</td>
 
-				</tr>
-			</tbody>
-			
-		</table>
+				<td>
 
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.product.phone}}
+
+						</div>
+					</div>
+				</td>
+
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{'Gedung '+hi.product.gedung+' lt '+hi.prodcut.lantai+' no '+hi.product.ruang}}
+
+						</div>
+					</div>
+				</td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.product.produk.nama}}
+
+						</div>
+					</div>
+				</td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.product.banyak}}
+
+						</div>
+					</div>
+				</td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.product.produk.price}}
+
+						</div>
+					</div>
+				</td>
+				<td>
+					<div ng-repeat="hi in his" class="box">
+						<div class="cetner-text">
+							{{hi.product.total}}
+
+						</div>
+					</div>
+				</td>
 				
 
-				
-					
-					
+			</tr>
+		</tbody>
+		
+	</table>
+	
 
-					
-
-					
-		<table class="table" ng-show="!checkboxModel.value1">
-			<thead>
-				<th>Nama Depan </th>
-				<th>Nama Belakang </th>
-				<th>No Telpon </th>
-				<th>Alamat Gedung </th>
-				<th>Produk</th>
-				<th>Banyak</th>
-				<th>Harga</th>
-				<th>Total</th>
-			</thead>
-			<tbody>
-				<tr>
-					<td><div ng-repeat="hi in his" class="box">
-						<div class="cetner-text">
-							{{hi.product.firstname}}
-
-						</div>
-					</div></td>
-
-					<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.lastname}}
-
-							</div>
-						</div>
-					</td>
-
-					<td>
-
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.phone}}
-
-							</div>
-						</div>
-					</td>
-
-					<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{'Gedung '+hi.product.gedung+' lt '+hi.prodcut.lantai+' no '+hi.product.ruang}}
-
-							</div>
-						</div>
-					</td>
-						<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.produk.nama}}
-
-							</div>
-						</div>
-					</td>
-					<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.banyak}}
-
-							</div>
-						</div>
-					</td>
-					<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.produk.price}}
-
-							</div>
-						</div>
-					</td>
-						<td>
-						<div ng-repeat="hi in his" class="box">
-							<div class="cetner-text">
-								{{hi.product.total}}
-
-							</div>
-						</div>
-					</td>
-					
-
-				</tr>
-			</tbody>
-			
-		</table>
-			
+</div>

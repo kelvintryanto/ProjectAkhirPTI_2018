@@ -88,6 +88,8 @@
 
 .same-col{
 	flex: 1;
+	width: 18%;
+	margin: 2px;
 }
 
 .staff{
