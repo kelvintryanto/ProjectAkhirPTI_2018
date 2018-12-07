@@ -49,7 +49,7 @@
         <label>Mode E-commmerce (klik untuk mengaktifkan) :
           <input type="checkbox" ng-model="checkboxModel.value1">
         </label><br/>
-        <h1>Makanan</h1>
+        <h2>Makanan</h2>
 
 
         <div ng-show="!checkboxModel.value1">
@@ -73,7 +73,7 @@
                 <div class="col-item">
                   <div  ng-repeat="makan in makans track by $index">
                     <div class="photo">
-                      <img id="image"  src="{{makan.image}}" class="img-responsive" width="800" height="300">
+                      <img id="image" src="{{makan.image}}" class="img-responsive" width="800" height="300">
                     </div>
                     <div class="info">
                       <div class="row">
