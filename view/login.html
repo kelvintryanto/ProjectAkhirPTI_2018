@@ -9,7 +9,11 @@
         </div>
         <form name="myForm">
           <div class="login-container">
-            <div class="row">
+            <div class="row">                
+              <div class="col-md-12">
+                <div ng-show="showError" class="alert alert-danger">Wrong credentials!</div>
+                <div ng-show="showSuccess" class="alert alert-success">Login Successful!</div>
+              </div>
               <div class="col-md-12">
                 <div class="form-group">
                   <label>Email</label>
@@ -31,12 +35,7 @@
                   <div class="clearfix"></div>
                 </div>
               </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div ng-show="showError" class="alert alert-danger">Wrong credentials!</div>
-                  <div ng-show="showSuccess" class="alert alert-success">Login Successful!</div>
-                </div>
-              </div>
+              
             </div>
             
           </div>
