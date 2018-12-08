@@ -78,6 +78,7 @@
 .datadiri{
 	width: 100%;
 	margin-bottom: 10px;
+	word-break: break-all;
 }
 
 .same-row{
@@ -95,4 +96,9 @@
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
+}
+
+.lebar{
+	width: 100%;
+	font-size: 1em;
 }
