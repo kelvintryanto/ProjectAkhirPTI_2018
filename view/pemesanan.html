@@ -49,7 +49,7 @@
         <label>Mode E-commmerce (klik untuk mengaktifkan) :
           <input type="checkbox" ng-model="checkboxModel.value1">
         </label><br/>
-        <h2>Produk SAMEN</h2>
+        <h2>Makanan</h2>
 
 
         <div ng-show="!checkboxModel.value1">
@@ -91,11 +91,11 @@
                         <p hidden></p>
                       </div>
                       
-                     
+                        
                           <i class="fa fa-shopping-cart"></i>
                           <button ng-click="cartOrder($index)" class="hidden-sm">Tambahkan Ke Keranjang</button>
                       
-                      
+                  
                     </div>
                   </div>
                 </div>
@@ -142,17 +142,17 @@
             </div>
           </form>
         </div>
-        <div class="row padding-16">
-          <button class="btn btn-success col-6" ng-click="addGem()">
-            Pesan
-          </button>
-          <a href="/home" class="col-6">
-            <button type="" value="cancel" class="btn btn-danger col-12">
-              Cancel
-            </button>
-          </a>
-        </div>
       </div>
+    </div>
+    <div class="row padding-16">
+      <button class="btn btn-success col-6" ng-click="addGem()">
+        Pesan
+      </button>
+      <a href="/home" class="col-6">
+        <button type="" value="cancel" class="btn btn-danger col-12">
+          Cancel
+        </button>
+      </a>
     </div>
   </form>
 </div>
