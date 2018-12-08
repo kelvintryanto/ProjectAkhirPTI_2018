@@ -99,7 +99,8 @@ app.controller('pesanCtrl',['$scope', function($scope,$rootScope){
 	
 		localStorage.setItem('carts',JSON.stringify($scope.test))
 		localStorage.setItem('history',JSON.stringify($scope.test))
-		
+		alert("Pesanan sedang diproses oleh penjual dan pesanan sudah tersimpan di Riwayat pemesanan. Mohon Harap Tunggu pesanan Anda Terima Kasih.")
+		$scope.resetForm()
 		$scope.keranjangs = $scope.test
 		
 		
