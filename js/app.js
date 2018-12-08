@@ -201,10 +201,12 @@ app.controller('login',function($scope,$location,$rootScope){
 				$location.path('/home')
 				flag = true;
 				$rootScope.loggedIn= true;
-				 $rootScope.checkboxModel = {
-       value1 : false,
-       
-     };
+				$rootScope.checkboxModel = {
+       			value1 : false,};
+				break;
+			}
+			else{
+				flag = false;
 				break;
 			}
 			
